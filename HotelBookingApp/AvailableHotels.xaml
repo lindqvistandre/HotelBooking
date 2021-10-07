@@ -7,17 +7,21 @@
         mc:Ignorable="d"
         Title="AvailableHotels" Name="ViewHotels" Height="600" Width="1200" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="241*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition Height="80"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Content="View All Hotels" FontWeight="Bold"/>
-        <Button CommandParameter="{Binding ElementName=ViewHotels}" FontSize="30" Grid.Row="0" Margin="20,10,10,10" Command="{Binding MainMenuClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Main Menu" Width="190" HorizontalAlignment="Left"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Content="Hotels"  Grid.Column="1" Margin="238,12,466,12"/>
+        <Button CommandParameter="{Binding ElementName=ViewHotels}" FontSize="30" Grid.Row="0" Margin="20,10,0,10" Command="{Binding MainMenuClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Main menu" Width="190" HorizontalAlignment="Left" Click="Button_Click"/>
 
-        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Content="{Binding HotelExtra,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" FontWeight="Bold"/>
-        
-        <DataGrid SelectedItem="{Binding SelectedHotel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Hotels, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Margin="20" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" Name="dgHotels">
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Content="{Binding HotelExtra,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" FontWeight="Bold" Grid.Column="1" Margin="363,35,591,35"/>
+
+        <DataGrid SelectedItem="{Binding SelectedHotel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Hotels, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Margin="20" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" Name="dgHotels" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Visibility="Hidden" Foreground="Black" Header="ID" Binding="{Binding EmployeeID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" Foreground="Black" Header="Hotel Name" Binding="{Binding HotelName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />

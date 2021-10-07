@@ -11,7 +11,7 @@
             <ImageBrush ImageSource="/Resources/Bg.png" />
 
         </Grid.Background>
-        <Label Foreground="Black" Content="Full Name:" FontSize="16" HorizontalAlignment="Left" Margin="15,34,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="Black" Content="Name:" FontSize="16" HorizontalAlignment="Left" Margin="15,34,0,0" VerticalAlignment="Top"/>
         <TextBox Name="tbIdNumber" Text="{Binding FullName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="142,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
         <Label  Foreground="Black" Content="Username:" FontSize="16" HorizontalAlignment="Left" Margin="15,82,0,0" VerticalAlignment="Top"/>
         <Label Foreground="Black" Content="Password:" FontSize="16" HorizontalAlignment="Left" Margin="408,84,0,0" VerticalAlignment="Top"/>
@@ -29,9 +29,9 @@
         <ComboBox SelectedValue="{Binding Gender, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Text="Please Select" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="530,38,0,0" VerticalAlignment="Top" Width="227">
             <ComboBoxItem>Male</ComboBoxItem>
             <ComboBoxItem>Female</ComboBoxItem>
-            <ComboBoxItem>Other</ComboBoxItem>
+           
         </ComboBox>
-        <Button Background="Navy" Foreground="White" Name="btnRegister" Content="Registrar" FontSize="16" HorizontalAlignment="Left" Margin="530,178,0,0" VerticalAlignment="Top" Width="220" Height="30" Command="{Binding AddNewUserClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Background="Navy" Foreground="White" Name="btnRegister" Content="Register" FontSize="16" HorizontalAlignment="Left" Margin="530,178,0,0" VerticalAlignment="Top" Width="220" Height="30" Command="{Binding AddNewUserClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
         <Label Margin="470,125,0,0" Height="30" Width="210">
             <Hyperlink Foreground="Black" CommandParameter="{Binding ElementName=RegisterWindow}" Command="{Binding OpenLoginClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">Already Member? Click here to Login</Hyperlink>
         </Label>

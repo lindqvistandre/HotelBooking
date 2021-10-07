@@ -35,6 +35,7 @@ namespace HotelBookingApp.Common
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex);
                 throw;
             }
         }
@@ -63,7 +64,7 @@ namespace HotelBookingApp.Common
                     return response;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 throw;
             }
@@ -93,7 +94,7 @@ namespace HotelBookingApp.Common
                     return response;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 throw;
             }
@@ -121,7 +122,7 @@ namespace HotelBookingApp.Common
                     return response;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 throw;
             }

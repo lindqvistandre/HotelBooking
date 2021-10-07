@@ -16,8 +16,8 @@ namespace HotelBookingApp.ViewModel
     {
         #region Private fields
         private ICommand _MainMenuClick;
-        private DateTime _SelectedStartDate;
-        private DateTime _SelectedEndDate;
+        private DateTime _SelectedStartDate = DateTime.Now;
+        private DateTime _SelectedEndDate = DateTime.Now;
         private Room _SelectedRoom;
         private Extra _SelectedExtra;
         private HotelInfo _SelectedHotel;
@@ -95,6 +95,7 @@ namespace HotelBookingApp.ViewModel
                 OnPropertyChanged("Rooms");
             }
         }
+
         public DateTime SelectedEndDate
         {
             get => _SelectedEndDate;
@@ -113,6 +114,10 @@ namespace HotelBookingApp.ViewModel
                 OnPropertyChanged("SelectedStartDate");
             }
         }
+
+
+
+
         public Room SelectedRoom
         {
             get => _SelectedRoom;

@@ -13,7 +13,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button CommandParameter="{Binding ElementName=MainMenuWindow}" FontSize="30" Grid.Row="0" Margin="10" Command="{Binding Logout,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Logout" Width="170" HorizontalAlignment="Left"/>
-        <Button CommandParameter="{Binding ElementName=MainMenuWindow}" FontSize="50" Grid.Row="1" Margin="10" Command="{Binding SeeAvailableHotels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="See Available Hotels"/>
-        <Button CommandParameter="{Binding ElementName=MainMenuWindow}" FontSize="50" Grid.Row="2" Command="{Binding SeeMyBookings,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10" Content="My Bookings"/>
+        <Button CommandParameter="{Binding ElementName=MainMenuWindow}" FontSize="50" Grid.Row="1" Margin="10" Command="{Binding SeeAvailableHotels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="See available hotels"/>
+        <Button CommandParameter="{Binding ElementName=MainMenuWindow}" FontSize="50" Grid.Row="2" Command="{Binding SeeMyBookings,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10" Content="My bookings"/>
     </Grid>
 </Window>
