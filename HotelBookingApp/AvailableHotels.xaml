@@ -28,8 +28,8 @@
                 <DataGridTextColumn Width="*" Foreground="Black" Header="Rating" Binding="{Binding Rating, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" Foreground="Black" Header="City" Binding="{Binding City, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" Foreground="Black" Header="Country" Binding="{Binding Country, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <DataGridTextColumn Width="*" Foreground="Black" Header="Number Of Rooms" Binding="{Binding NumberOfRooms, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <DataGridTextColumn Width="*" Foreground="Black" Header="Available" Binding="{Binding IsAvailable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <!--<DataGridTextColumn Width="*" Foreground="Black" Header="Number Of Rooms" Binding="{Binding NumberOfRooms, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
+                <!--<DataGridTextColumn Width="*" Foreground="Black" Header="Available" Binding="{Binding IsAvailable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
                 <DataGridTemplateColumn Header="Action" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

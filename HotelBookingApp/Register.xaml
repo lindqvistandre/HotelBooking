@@ -6,21 +6,13 @@
         xmlns:local="clr-namespace:HotelBookingApp"
         mc:Ignorable="d"
         Title="Register" ResizeMode="NoResize" Height="350" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Resources/Bg.png" />
+    <Grid Background="AliceBlue">
 
-        </Grid.Background>
         <Label Foreground="Black" Content="Name:" FontSize="16" HorizontalAlignment="Left" Margin="15,34,0,0" VerticalAlignment="Top"/>
         <TextBox Name="tbIdNumber" Text="{Binding FullName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="142,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+
         <Label  Foreground="Black" Content="Username:" FontSize="16" HorizontalAlignment="Left" Margin="15,82,0,0" VerticalAlignment="Top"/>
-        <Label Foreground="Black" Content="Password:" FontSize="16" HorizontalAlignment="Left" Margin="408,84,0,0" VerticalAlignment="Top"/>
         <TextBox Name="tbUsername" Text="{Binding Username,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="142,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-        <PasswordBox Name="tbPassword" PasswordChanged="PasswordBox_PasswordChanged" FontSize="16" HorizontalAlignment="Left" Margin="530,90,0,0" VerticalAlignment="Top" Width="227"/>
-
-        <Label Foreground="Black" Content="Email:" FontSize="16" HorizontalAlignment="Left" Margin="408,128,0,0" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="530,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
-
 
         <Label Foreground="Black" Content="Contact:" FontSize="16" HorizontalAlignment="Left" Margin="15,128,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbPhone" Text="{Binding Contact,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="142,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
@@ -29,9 +21,17 @@
         <ComboBox SelectedValue="{Binding Gender, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Text="Please Select" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="530,38,0,0" VerticalAlignment="Top" Width="227">
             <ComboBoxItem>Male</ComboBoxItem>
             <ComboBoxItem>Female</ComboBoxItem>
-           
         </ComboBox>
+
+
+        <Label Foreground="Black" Content="Password:" FontSize="16" HorizontalAlignment="Left" Margin="408,84,0,0" VerticalAlignment="Top"/>
+        <PasswordBox Name="tbPassword" PasswordChanged="PasswordBox_PasswordChanged" FontSize="16" HorizontalAlignment="Left" Margin="530,90,0,0" VerticalAlignment="Top" Width="227"/>
+
+        <Label Foreground="Black" Content="Email:" FontSize="16" HorizontalAlignment="Left" Margin="408,128,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="530,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
+
         <Button Background="Navy" Foreground="White" Name="btnRegister" Content="Register" FontSize="16" HorizontalAlignment="Left" Margin="530,178,0,0" VerticalAlignment="Top" Width="220" Height="30" Command="{Binding AddNewUserClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
         <Label Margin="470,125,0,0" Height="30" Width="210">
             <Hyperlink Foreground="Black" CommandParameter="{Binding ElementName=RegisterWindow}" Command="{Binding OpenLoginClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">Already Member? Click here to Login</Hyperlink>
         </Label>

@@ -21,16 +21,16 @@
         <Label Grid.Row="1" Content="End date :" HorizontalAlignment="Center" Margin="130,0,0,0" VerticalAlignment="Center" FontSize="20" Width="120"/>
         <DatePicker Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,100,0" VerticalAlignment="Center" FontSize="20" Width="190" SelectedDate="{Binding SelectedEndDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Row="2" Content="Extra Service :" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" FontSize="20" Width="220"/>
+        <Label Grid.Row="2" Content="Extra service :" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" FontSize="20" Width="220"/>
         <ComboBox SelectedItem="{Binding SelectedExtra, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Width="250" Height="40" FontSize="25" ItemsSource="{Binding Extras, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="ExtraDescription" SelectedValuePath="Id"/>
 
         <DataGrid SelectedItem="{Binding SelectedRoom,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Rooms, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Margin="20" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" Name="dgHotelRooms">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Visibility="Hidden" Foreground="Black" Header="ID" Binding="{Binding EmployeeID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" Foreground="Black" Header="Size" Binding="{Binding Size, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <DataGridTextColumn Width="*" Foreground="Black" Header="Price Per Night" Binding="{Binding PricePerNight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <DataGridTextColumn Width="*" Foreground="Black" Header="Available" Binding="{Binding IsAvailable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <DataGridTextColumn Width="*" Foreground="Black" Header="Available Date" Binding="{Binding AvailableDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=dd-MM-yyyy}" />
+                <DataGridTextColumn Width="*" Foreground="Black" Header="Price Per Night (USD)" Binding="{Binding PricePerNight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <!--<DataGridTextColumn Width="*" Foreground="Black" Header="Available" Binding="{Binding IsAvailable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
+                <!--<DataGridTextColumn Width="*" Foreground="Black" Header="Available Date" Binding="{Binding AvailableDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=dd-MM-yyyy}" />-->
                 <DataGridTemplateColumn Header="Action" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

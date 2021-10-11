@@ -30,7 +30,7 @@ namespace REST_API.Models
                             model.HotelName = item.HotelName;
                             model.IsAvailable = item.IsAvailable;
                             model.NumberOfRooms = item.NumberOfRooms;
-                            model.Rating = item.Id;
+                            model.Rating = item.Rating;
                             model.Country = item.Country;
                             model.City = item.City;
 

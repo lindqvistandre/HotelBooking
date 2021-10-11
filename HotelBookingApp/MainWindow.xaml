@@ -7,39 +7,80 @@
         mc:Ignorable="d"
         Title="MainWindow" WindowStartupLocation="CenterScreen" Name="LoginWindow" Height="320" Width="490" ResizeMode="NoResize" Background="Black">
 
-    <StackPanel Orientation="Vertical" Background="#a6d9ef" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
-        <Border CornerRadius="25" Margin="20,10,20,10" BorderBrush="Red" Background="White" Width="330">
-            <StackPanel Orientation="Vertical">
-                <Label Content="Welcome" FontSize="25" HorizontalAlignment="Center" FontWeight="Bold" Margin="2,5,2,0" VerticalContentAlignment="Bottom"/>
-                <Label Content="Please login to proceed" FontSize="20" HorizontalContentAlignment="Center"  Margin="2,0,2,10" VerticalContentAlignment="Top"/>
+    <Grid Background="AliceBlue">
 
-                <Grid Margin="2" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="110"/>
-                        <ColumnDefinition Width="200"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Margin="0,5" Content="Username: " VerticalContentAlignment="Center"
-HorizontalContentAlignment="Right"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtUserId" Margin="0,5" Width="150" VerticalContentAlignment="Center" Text="{Binding Username,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-HorizontalContentAlignment="Left"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="1" Grid.Column="0" Margin="0,5" Content="Password : " VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                    <PasswordBox PasswordChanged="PasswordBox_PasswordChanged" Grid.Row="1" Grid.Column="1" x:Name="txtPassword" Margin="0,5" Width="150" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                        <Button Content="LOGIN" Command="{Binding LoginCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="btnLogin" Margin="2,10" Width="100" Height="30" Background="#80ff00" Foreground="Black" BorderBrush="White"/>
-                    </StackPanel>
+        <Image Source="/resources/bookinghotel.png"
+               Grid.Column="1"
+               Grid.Row="0">
 
-                </Grid>
-                <Label Height="30" Width="210">
-                    <Hyperlink Foreground="Black" CommandParameter="{Binding ElementName=LoginWindow}" Command="{Binding OpenRegisterClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">Not a member? Click here to register</Hyperlink>
-                </Label>
-            </StackPanel>
-        </Border>
-    </StackPanel>
+        </Image>
+
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Content="Username"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               Height="30">
+        </Label>
+
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Height="30"
+                 VerticalAlignment="Bottom"
+                 x:Name="txtUserId"
+                 Text="{Binding Username,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+        </TextBox>
+
+        <Label Grid.Row="2"
+               Grid.Column="1"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"
+               Content="Password"/>
+
+        <PasswordBox
+                PasswordChanged="PasswordBox_PasswordChanged"
+                Grid.Row="2" Grid.Column="1"
+                Height="30"
+                VerticalAlignment="Bottom"
+                x:Name="txtPassword"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center">
+            <Button Content="LOGIN"
+                    Command="{Binding LoginCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                    x:Name="btnLogin"
+                    Background="#80ff00"
+                    Foreground="Black"
+                    BorderBrush="White"
+                    Width="100"
+                    Height="30"/>
+        </StackPanel>
+
+        <Label Height="30"
+               Width="210"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Grid.Column="0"
+               Grid.Row="4"
+               Grid.ColumnSpan="4">
+            <Hyperlink Foreground="Black"
+                       CommandParameter="{Binding ElementName=LoginWindow}"
+                       Command="{Binding OpenRegisterClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">First time here? Click here to register</Hyperlink>
+        </Label>
+    </Grid>
 </Window>

@@ -5,15 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelBookingApp"
         mc:Ignorable="d"
+        FontSize="18" Background="AliceBlue"
         Title="MainMenu" Name="MainMenuWindow" Height="470" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button CommandParameter="{Binding ElementName=MainMenuWindow}" FontSize="30" Grid.Row="0" Margin="10" Command="{Binding Logout,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Logout" Width="170" HorizontalAlignment="Left"/>
-        <Button CommandParameter="{Binding ElementName=MainMenuWindow}" FontSize="50" Grid.Row="1" Margin="10" Command="{Binding SeeAvailableHotels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="See available hotels"/>
-        <Button CommandParameter="{Binding ElementName=MainMenuWindow}" FontSize="50" Grid.Row="2" Command="{Binding SeeMyBookings,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10" Content="My bookings"/>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/resources/bookinghotel.png"
+               Grid.Column="1"
+               Grid.Row="0">
+
+        </Image>
+
+        <Button Background="White"
+                CommandParameter="{Binding ElementName=MainMenuWindow}"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20 20 20 20"
+                Command="{Binding SeeAvailableHotels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                Content="See available hotels"/>
+
+        <Button Background="White"
+                CommandParameter="{Binding ElementName=MainMenuWindow}"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="20 20 20 20"
+                Command="{Binding SeeMyBookings,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                Content="My bookings"/>
+
+        <Button Background="White"
+                CommandParameter="{Binding ElementName=MainMenuWindow}"
+                Grid.Row="3"
+                Grid.Column="1"
+                Command="{Binding Logout,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                Content="Logout"
+                HorizontalAlignment="Center"
+                Width="100"
+                Height="30"
+                VerticalAlignment="Bottom"
+                Margin="0 0 0 10"/>
     </Grid>
 </Window>

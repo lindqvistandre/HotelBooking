@@ -18,11 +18,11 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Visibility="Hidden" Foreground="Black" Header="ID" Binding="{Binding EmployeeID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" Foreground="Black" Header="Start Date" Binding="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,StringFormat=dd-MM-yyyy}" />
-                <DataGridTextColumn Width="*" Foreground="Black" Header="End Date" Binding="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,StringFormat=dd-MM-yyyy}" />
+                <DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="End Date" Binding="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,StringFormat=dd-MM-yyyy}" />
                 <DataGridTextColumn Width="*" Foreground="Black" Header="Booking Days" Binding="{Binding BookingDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <DataGridTextColumn Width="*" Foreground="Black" Header="Total Charges" Binding="{Binding TotalCharges, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Total Charges (USD)" Binding="{Binding TotalCharges, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Hotel" Binding="{Binding HotelInfo.HotelName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Room Id" Binding="{Binding RoomId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <!--<DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Room Id" Binding="{Binding RoomId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
                 <DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Extras" Binding="{Binding Extras, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTemplateColumn Header="Update" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
