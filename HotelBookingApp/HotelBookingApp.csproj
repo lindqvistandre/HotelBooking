@@ -153,6 +153,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Dosis.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -170,6 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\bookinghotel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lines.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

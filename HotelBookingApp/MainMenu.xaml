@@ -9,7 +9,7 @@
         Title="MainMenu" Name="MainMenuWindow" Height="470" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -21,38 +21,137 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="/resources/bookinghotel.png"
+        <Image Source="/Resources/lines.png"
                Grid.Column="1"
-               Grid.Row="0">
-
+               Grid.ColumnSpan="2" Margin="39,28,-25,-4" Grid.RowSpan="4" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.178"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
         </Image>
 
-        <Button Background="White"
+        <Grid Background="DarkBlue"
+              Grid.ColumnSpan="3"
+              Panel.ZIndex="-1">
+
+            <Image Source="/Resources/bookinghotel.png"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   Margin="10"
+                   HorizontalAlignment="Left">
+            </Image>
+
+
+        </Grid>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Vertical"
+                    Grid.RowSpan="4">
+
+            <TextBlock
+                Margin="5 15 5 5"
+                FontSize="26"
+                TextWrapping="Wrap"
+                HorizontalAlignment="Center"
+                FontFamily="/HotelBookingApp;component/Resources/#Dosis"
+                Text="Welcome back!"/>
+
+            <TextBlock Text="Here you can see a list of your bookings or make a new one"
+                       FontSize="24"
+                       FontFamily="/HotelBookingApp;component/Resources/#Dosis"
+                       TextWrapping="Wrap"
+                       Margin="5 5 5 5"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"/>
+
+            <Button
                 CommandParameter="{Binding ElementName=MainMenuWindow}"
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="20 20 20 20"
+                FontSize="18"
+                Margin="0 10 0 10"
                 Command="{Binding SeeAvailableHotels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                Content="See available hotels"/>
+                Content="See available hotels">
 
-        <Button Background="White"
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="/HotelBookingApp;component/Resources/#Dosis"/>
+                        <Setter Property="Background" Value="#FF4EDAF9"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFA2CFE4"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="160" Height="40"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button
                 CommandParameter="{Binding ElementName=MainMenuWindow}"
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="20 20 20 20"
+                FontSize="18"
+                Margin="0 10 0 0"
                 Command="{Binding SeeMyBookings,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                Content="My bookings"/>
+                Content="My bookings">
 
-        <Button Background="White"
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="/HotelBookingApp;component/Resources/#Dosis"/>
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF4C70"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="160" Height="40"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button Background="White"
                 CommandParameter="{Binding ElementName=MainMenuWindow}"
-                Grid.Row="3"
-                Grid.Column="1"
                 Command="{Binding Logout,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                 Content="Logout"
                 HorizontalAlignment="Center"
                 Width="100"
                 Height="30"
                 VerticalAlignment="Bottom"
-                Margin="0 0 0 10"/>
+                Margin="0 30 0 0"/>
+
+        </StackPanel>
     </Grid>
 </Window>
