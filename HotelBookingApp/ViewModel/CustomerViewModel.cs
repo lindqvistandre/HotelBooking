@@ -198,6 +198,12 @@ namespace HotelBookingApp.ViewModel
                 MessageBox.Show("Please provide all details");
                 return;
             }
+            if (!Email.Contains("@"))
+            {
+                MessageBox.Show("Please provide a correct e-mail adress");
+                return;
+            }
+
             else
             {
                 var _loggedUser = new Customer();
@@ -225,6 +231,8 @@ namespace HotelBookingApp.ViewModel
                     }
 
                 }
+
+
                 else
                 {
                 }

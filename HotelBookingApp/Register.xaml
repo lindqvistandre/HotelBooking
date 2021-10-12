@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelBookingApp"
         mc:Ignorable="d"
-        Title="Register" ResizeMode="NoResize" Height="350" Width="800" WindowStartupLocation="CenterScreen">
+        Title="RegisterWindow" ResizeMode="NoResize" Height="350" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="AliceBlue">
 
         <Label Foreground="Black" Content="Name:" FontSize="16" HorizontalAlignment="Left" Margin="15,34,0,0" VerticalAlignment="Top"/>
@@ -33,7 +33,20 @@
         <Button Background="Navy" Foreground="White" Name="btnRegister" Content="Register" FontSize="16" HorizontalAlignment="Left" Margin="530,178,0,0" VerticalAlignment="Top" Width="220" Height="30" Command="{Binding AddNewUserClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Margin="470,125,0,0" Height="30" Width="210">
-            <Hyperlink Foreground="Black" CommandParameter="{Binding ElementName=RegisterWindow}" Command="{Binding OpenLoginClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">Already Member? Click here to Login</Hyperlink>
+            <Hyperlink Foreground="Black" Command="{Binding OpenLoginClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">Already Member? Click here to Login</Hyperlink>
         </Label>
+        <Image Source="/Resources/lines.png" Margin="231,25,-217,-1"
+               RenderTransformOrigin="0.5,0.5"
+               Panel.ZIndex="-1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.178"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
 </Window>
+<!--CommandParameter="{Binding ElementName=RegisterWindow}"-->

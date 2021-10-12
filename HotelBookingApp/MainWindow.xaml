@@ -82,5 +82,20 @@
                        CommandParameter="{Binding ElementName=LoginWindow}"
                        Command="{Binding OpenRegisterClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">First time here? Click here to register</Hyperlink>
         </Label>
+        <Image Source="/Resources/lines.png"
+               Grid.Column="1"
+               Grid.ColumnSpan="2" Margin="47,24,-33,-1"
+               Grid.RowSpan="4"
+               RenderTransformOrigin="0.5,0.5"
+               Panel.ZIndex="-1" Grid.Row="1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.178"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
 </Window>

@@ -5,16 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelBookingApp"
         mc:Ignorable="d"
-        Title="ViewMyBookings" Name="ViewBookings" Height="600" Width="1200" WindowStartupLocation="CenterScreen">
+        Title="ViewMyBookings" Name="ViewBookings" Height="600" Width="1200" WindowStartupLocation="CenterScreen"
+        
+        FontFamily="Resources/#Dosis">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Content="View All Bookings" FontWeight="Bold"/>
-        <Button CommandParameter="{Binding ElementName=ViewBookings}" FontSize="30" Grid.Row="0" Margin="20,10,10,10" Command="{Binding MainMenuClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Main Menu" Width="190" HorizontalAlignment="Left"/>
 
-        <DataGrid SelectedItem="{Binding SelectedBooking, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Bookings, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Margin="20" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" Name="dgBookings">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#FFFF9095"
+              Grid.Row="0"
+              Grid.ColumnSpan="3"/>
+
+        <StackPanel Grid.Column="1">
+
+            <Label HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="36"
+               Content="View All Bookings"/>
+
+            <TextBlock Text="View of all of my bookings"
+                       Margin="0 10 0 0"
+                       HorizontalAlignment="Center"
+                       FontSize="22"/>
+
+        </StackPanel>
+
+        <DataGrid SelectedItem="{Binding SelectedBooking, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Bookings, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="3"
+                  Grid.RowSpan="2"
+                  Margin="50 20 50 10"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  Name="dgBookings">
+
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Visibility="Hidden" Foreground="Black" Header="ID" Binding="{Binding EmployeeID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" Foreground="Black" Header="Start Date" Binding="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,StringFormat=dd-MM-yyyy}" />
@@ -22,7 +58,6 @@
                 <DataGridTextColumn Width="*" Foreground="Black" Header="Booking Days" Binding="{Binding BookingDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Total Charges (USD)" Binding="{Binding TotalCharges, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Hotel" Binding="{Binding HotelInfo.HotelName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <!--<DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Room Id" Binding="{Binding RoomId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
                 <DataGridTextColumn Width="*" IsReadOnly="True" Foreground="Black" Header="Extras" Binding="{Binding Extras, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTemplateColumn Header="Update" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
@@ -41,6 +76,60 @@
             </DataGrid.Columns>
 
         </DataGrid>
+
+        <Button CommandParameter="{Binding ElementName=ViewBookings}"
+                Command="{Binding MainMenuClick,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                Content="Main Menu"
+                Width="200"
+                Height="50"
+                Grid.Row="3"
+                Grid.Column="1">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="/HotelBookingApp;component/Resources/#Dosis"/>
+                    <Setter Property="Background" Value="#FF4EDAF9"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFA2CFE4"/>
+                        </Trigger>
+                    </Style.Triggers>
+
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="160" Height="40"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+
+        <Image Source="/Resources/lines.png"
+               Grid.Column="1"
+               Grid.ColumnSpan="2" Margin="63,26,-49,-2.333"
+               Grid.RowSpan="4"
+               RenderTransformOrigin="0.5,0.5"
+               Panel.ZIndex="-1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.178"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
 
     </Grid>
 </Window>
