@@ -3,9 +3,9 @@ Ladda ner projektet som en zip fil och extrahera den till skrivbordet.
 
 Få databasen i projektet:
 
-Kör scriptet för databasen i SQL Manager studio
-I projektet DAL i Visual Studio lägger du till en ny item, välj där ADO.NET SQL Entity model, följ anvisningarna och lägg till ditt Server namn från SQL Manager.
-Nu ska SQL & Visual Studio länka tillsammans och databasen kommer att autogenereras i projektet.
-För att lägga till/ta bort exempelvis ett hotell kan du antingen göra en query i SQL Manager eller i Visual Studios server explorer
-Kör queryn och välj “Build Soulition” för att uppdatera och kontrollera så att inga felkoder dykt upp
-Kör programmet och kontrollera att dina ändringar i databasen har fungerat
+1. Kör scriptet för databasen i SQL Manager studio
+2. I projektet DAL i Visual Studio lägger du till en ny item, välj där ADO.NET SQL Entity model, följ anvisningarna och lägg till ditt Server namn från SQL Manager.
+3. Nu ska SQL & Visual Studio länka tillsammans och databasen kommer att autogenereras i projektet.
+4. För att lägga till/ta bort exempelvis ett hotell kan du antingen göra en query i SQL Manager eller i Visual Studios server explorer
+5. Kör queryn och välj “Build Soulition” för att uppdatera och kontrollera så att inga felkoder dykt upp
+6. Kör programmet och kontrollera att dina ändringar i databasen har fungerat
